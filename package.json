@@ -5,13 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postinstall": "node -e \"const fs=require('fs'),p='node_modules/@types/mapbox__point-geometry/index.d.ts';if(!fs.existsSync(p)){fs.writeFileSync(p,'export {}\\n')}\"",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@turf/turf": "^7.3.4",
+    "framer-motion": "^12.34.3",
+    "h3-js": "^4.4.0",
+    "lucide-react": "^0.576.0",
+    "mapbox-gl": "^3.19.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-map-gl": "^8.1.0",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

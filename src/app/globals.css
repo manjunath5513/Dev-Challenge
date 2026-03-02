@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #ededed;
+  --terra-green: #00FF88;
+  --terra-green-dim: #00cc6a;
+  --terra-dark: #0a0a0f;
+  --terra-card: #141420;
+  --terra-border: #1e1e30;
+  --terra-muted: #8888aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-terra-green: var(--terra-green);
+  --color-terra-green-dim: var(--terra-green-dim);
+  --color-terra-dark: var(--terra-dark);
+  --color-terra-card: var(--terra-card);
+  --color-terra-border: var(--terra-border);
+  --color-terra-muted: var(--terra-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e1e30 transparent;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+/* Mapbox overrides */
+.mapboxgl-popup-content {
+  background: #141420 !important;
+  color: #ededed !important;
+  border: 1px solid #1e1e30 !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: #141420 !important;
+}
+
+.mapboxgl-popup-close-button {
+  color: #8888aa !important;
+  font-size: 18px !important;
+  padding: 4px 8px !important;
+}
+
+.mapboxgl-ctrl-group {
+  background: #141420 !important;
+  border: 1px solid #1e1e30 !important;
+}
+
+.mapboxgl-ctrl-group button {
+  filter: invert(1);
+}
+
+/* Glow effects */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes hex-capture {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-hex-capture {
+  animation: hex-capture 0.6s ease-out forwards;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(20, 20, 32, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 30, 48, 0.6);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00FF88, #00cc6a, #00ddff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
