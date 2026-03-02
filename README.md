@@ -2,7 +2,7 @@
 
 A territory capture running app where every closed loop you run becomes your turf on the map. Built for the [DEV Weekend Challenge](https://dev.to/challenges/weekend-2026-02-28) (Feb 27 – Mar 2, 2026).
 
-**Live Demo:** [dev-challenge-one-roan.vercel.app](https://terrarun-dev.vercel.app/)
+**Live Demo:** [terrarun-dev.vercel.app](https://terrarun-dev.vercel.app/)
 
 **Video Demo:** [youtu.be/Cr7n3qfzARM](https://youtu.be/Cr7n3qfzARM)
 
